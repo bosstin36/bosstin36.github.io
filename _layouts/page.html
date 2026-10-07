@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<main id="main" class="main-content" aria-label="Content">
+  <article>
+
+    <!--{% include page-image.html %}-->
+
+    <div class="page-wrapper">
+      <a href="/"> {{ site.data.icons.back }} Back</a> 
+      <header class="page-header">
+
+        <br>
+        {% if page.id %}
+          {% assign title = page.title | markdownify | strip_html %}
+        {% else %}
+          {% assign title = page.title %}
+        {% endif %}
+        {% if page.link %}
+          <h1 id="page-title" class="page-title"><a href="{{ page.link }}">{{ title }} <span class="link-arrow">&rarr;</span></a></h1>
+        {% else %}
+          <h1 id="page-title" class="page-title p-name animated fadeInRight">{{ title }}</h1>
+        {% endif %}
+       
+      </header>
+
+      
+      <br>
+
+      <div class="page-content">
+        {{ content }}
+        {% if page.share %}
+          {% include social-share.html %}
+        {% endif %}
+      </div>
+    </div>
+
+
+    
+  </article>
+</main>

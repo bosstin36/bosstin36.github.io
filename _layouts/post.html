@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+
+    <div class="page-wrapper">
+
+      <a href="/"> {{ site.data.icons.back }} Back</a> 
+
+      <header class="page-header">
+        {% assign title = page.title | markdownify | strip_html %}
+        {% if page.link %}
+        
+          <h1 id="page-title" class="page-title p-name animated fadeIn"><a href="{{ page.link }}">{{ title }} <span class="link-arrow">&rarr;</span></a></h1>
+        {% else %}
+
+          <div class="container">
+
+            <h1 id="page-title" class="page-title p-name animated fadeInRight">{{ title }}</h1>
+            <div class = 'right-info'>
+              {% include page-date.html %}
+              {% include page-categories.html %}
+            </div>
+          </div>
+          
+        {% endif %}
+
+      <br> 
+        
+      </header>
+
+      {% comment %}
+      <div class="page-sidebar">
+        {% include page-date.html %}
+        {% include page-tags.html %}
+      </div>
+      {% endcomment %}
+      <br> 
+      <div class="page-content">
+        <div class="e-content">
+
+
+
+          {{ content }}
+        </div>
+
+        {% if page.share %}
+          {% include social-share.html %}
+        {% endif %}
+
+        {% if site.disqus.shortname %}
+          {% include disqus-comments.html %}
+        {% endif %}
+
+        {% comment %}{% include page-pagination.html %}{% endcomment %}
+      </div>
+    </div>
+  </article>
+</main>

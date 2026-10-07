@@ -1,0 +1,64 @@
+{% if entry.id %}
+  {% assign title = entry.title | markdownify | strip_html %}
+{% else %}
+  {% assign title = entry.title %}
+{% endif %}
+
+
+<article class="entry h-entry">
+  
+
+
+
+
+  <a href="{{ entry.url | relative_url }}" rel="bookmark">
+    <header class="entry-header">
+
+      <div class="entry-container" >
+        <img src="{{entry.image.thumbnail}}" >
+        <div class="entry-fader" ></div>
+      </div>
+      
+    
+        <h2 class="entry-title p-name">
+          {{ title }}
+        </h2>
+    
+
+    </header>
+
+
+    
+  </a>
+
+{% if site.read_time or entry.date %}
+    {% unless page.show_date == false %}
+      <div class="entry-meta">
+        {% if site.read_time %}{% include read-time.html %}{% endif %}
+        {% if entry.date %}{% include entry-date.html %}{% endif %}
+      </div>
+    {% endunless %}
+  {% endif %}
+
+
+  {% unless page.show_excerpts == false %}
+  <div class="entry-excerpt p-summary">
+    {% if entry.tagline %}
+      {{ entry.tagline}}
+    {% endif %}
+  </div>
+{% endunless %}
+
+{% comment %}
+
+  {% unless page.show_excerpts == false %}
+    <div class="entry-excerpt p-summary">
+      {% if entry.excerpt %}
+        {{ entry.excerpt | markdownify | replace: "./",  url }}
+      {% endif %}
+    </div>
+  {% endunless %}
+
+  {% endcomment %}
+
+</article>

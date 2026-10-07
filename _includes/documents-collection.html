@@ -1,0 +1,113 @@
+{% comment %}
+
+{% assign entries = site[include.collection] %}
+
+
+{% if entries and entries.size > 0 %}
+  {% if include.sort_by == 'title' %}
+    {% if include.sort_order == 'reverse' %}
+      {% assign entries = entries | sort: 'title' | reverse %}
+
+    {% else %}
+      {% assign entries = entries | sort: 'title' %}
+
+    {% endif %}
+  {% elsif include.sort_by == 'date' %}
+    {% if include.sort_order == 'reverse' %}
+      {% assign entries = entries | sort: 'date' | reverse %}
+
+    {% else %}
+      {% assign entries = entries | sort: 'date' %}
+
+    {% endif %}
+  {% endif %}
+{% else %}
+
+{% endif %}
+
+{%- if entries and entries.size > 0 -%}
+  {%- for entry in entries -%}
+    {% include entry.html %}
+  {%- endfor -%}
+{%- endif -%}
+
+{% endcomment %}
+
+
+
+
+{% assign entries = site[include.collection] %}
+
+
+{% if entries and entries.size > 0 %}
+  {% if include.sort_by == 'title' %}
+    {% if include.sort_order == 'reverse' %}
+      {% assign entries = entries | sort: 'title' | reverse %}
+
+    {% else %}
+      {% assign entries = entries | sort: 'title' %}
+
+    {% endif %}
+  {% elsif include.sort_by == 'date' %}
+    {% if include.sort_order == 'reverse' %}
+      {% assign entries = entries | sort: 'date' | reverse %}
+
+    {% else %}
+      {% assign entries = entries | sort: 'date' %}
+
+    {% endif %}
+  {% endif %}
+{% else %}
+
+{% endif %}
+
+{%- if entries and entries.size > 0 -%}
+  {%- for entry in entries -%}
+    {% include entry.html %}
+  {%- endfor -%}
+{%- endif -%}
+
+
+
+
+
+
+{% comment %}
+{% assign entries = site[include.collection] %}
+
+<!-- Debug Output: Log the initial entries -->
+<pre>Initial entries: {{ entries | inspect }}</pre>
+
+{% if entries and entries.size > 0 %}
+  {% if include.sort_by == 'title' %}
+    {% if include.sort_order == 'reverse' %}
+      {% assign entries = entries | sort: 'title' | reverse %}
+      <!-- Debug Output: Log the entries after sorting by title in reverse -->
+      <pre>Sorted by title (reverse): {{ entries | inspect }}</pre>
+    {% else %}
+      {% assign entries = entries | sort: 'title' %}
+      <!-- Debug Output: Log the entries after sorting by title -->
+      <pre>Sorted by title: {{ entries | inspect }}</pre>
+    {% endif %}
+  {% elsif include.sort_by == 'date' %}
+    {% if include.sort_order == 'reverse' %}
+      {% assign entries = entries | sort: 'date' | reverse %}
+      <!-- Debug Output: Log the entries after sorting by date in reverse -->
+      <pre>Sorted by date (reverse): {{ entries | inspect }}</pre>
+    {% else %}
+      {% assign entries = entries | sort: 'date' %}
+      <!-- Debug Output: Log the entries after sorting by date -->
+      <pre>Sorted by date: {{ entries | inspect }}</pre>
+    {% endif %}
+  {% endif %}
+{% else %}
+  <!-- Handle the case where entries are null or empty -->
+  <p>No entries found in the collection '{{ include.collection }}'.</p>
+{% endif %}
+
+{%- if entries and entries.size > 0 -%}
+  {%- for entry in entries -%}
+    {% include entry.html %}
+  {%- endfor -%}
+{%- endif -%}
+{% endcomment %}

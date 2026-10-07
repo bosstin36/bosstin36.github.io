@@ -1,0 +1,81 @@
+games:
+  - title: "Until Dawn 2"
+    role: "Senior Technical Artist"
+    info: ""
+    image: "game-ud2.jpg"
+
+  - title: "Vampire: The Masquerade - Bloodlines 2"
+    role: "Senior Technical Artist"
+    info: ""
+    image: "game-bl2.jpg"
+
+  - title: "Unannounced Title"
+    role: "Principal Technical Designer"
+    info: ""
+    image: "game-unreleased.jpg"
+
+
+
+jobs:
+  - title: "Lead Technical Artist"
+    company: "Innovecs Games"
+    location: "Remote"
+    dates: "Feburary 2025 - Present"
+    description: " Lead and Principal TA for client projects"
+
+  - title: "Senior Technical Artist (Tools & R&D)"
+    company: "Atomhawk Advance"
+    location: "Remote"
+    dates: "Feburary 2023 - Feburary 2025"
+    description: "Senior TA for client projects"
+
+  - title: "Senior Lecturer in Games Design"
+    company: "University for the Creative Arts"
+    location: "Farnham"
+    dates: "April 2022 - February 2023"
+    description: "Course leader for Games Design BSc and MA" 
+
+  - title: "Senior Lecturer and Games Provision Manager"
+    company: "Staffordshire University London"
+    location: "London"
+    dates: "August 2019 - April 2022"
+    description: "Course leader for Games Design." 
+
+  - title: "Lecturer in Games Technical Design"
+    company: "Staffordshire University"
+    location: "Stoke-on Trent"
+    dates: "December 2017 - September 2019"
+    description: "Lecturer and module leader" 
+
+  - title: "Lecturer in Games Development"
+    company: "South Thames College"
+    location: "London"
+    dates: "February 2014 - December 2017"
+    description: "Course leader for Games Development." 
+
+
+education:
+
+
+  - award: "PGCert Education Leadership and Management"
+    grade: ", Distinction"
+    from: "University of Roehamption"
+    date: "2022"
+
+  - award: "Postgraduate Certificate in Education (PGCE)"
+    grade: ""
+    from: "Canterbury Christ Church University"
+    date: "2016"
+
+  - award: "Bachelor of Science (BSc), Computer Gameplay Design and Production"
+    grade: ", First (Hons)"
+    from: "University of Staffordshire"
+    date: "2013"
+
+  - award: "BTEC Games Development"
+    grade: ", Triple Distinction"
+    from: "South Thames College"
+    date: "2009"
+
+
+  

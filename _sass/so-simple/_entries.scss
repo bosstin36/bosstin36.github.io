@@ -1,0 +1,336 @@
+/* ==========================================================================
+   Entries (Posts, collection documents, etc.)
+   ========================================================================== */
+
+   .entry {
+    @include clearfix();
+    position: relative;
+  
+    a {
+      color: inherit;
+    }
+
+    a:hover {
+      //padding: 2px 4px 2px 4px;
+    }
+  
+    box-shadow:  0px 0px 15px black, 1px 1px 5px black;
+    background-color: rgba(255,255,255,.1);
+  
+    border-radius: 8px;
+    
+    padding: 10px;
+  
+    height: fit-content;
+  }
+  
+  .entry-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    overflow:hidden;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .entry-header:hover{
+    padding: 2px 4px 2px 4px;
+  }
+
+  
+  .entry-title {
+    margin-bottom: 0.0rem;
+    //font-family: $title-font-family;
+    font-weight: $entry-title-weight;
+    font-style: italic;
+    letter-spacing: -1px;
+    word-wrap: break-word; /* break long words that could overflow */
+    position: absolute;
+    display: inline-block;
+    padding: .05em;
+    a {
+      text-decoration: none;
+    }
+    //text-shadow: -1px -1px 15px black, 
+    //0px 0px 15px black, 
+    //-5px 0px 15px black, 
+    //1px 1px 15px black;
+    //color:#ff7625;
+    color: white;
+    pointer-events: none;
+    
+
+    
+    left: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+    border-radius: 0px 5px 0px 0px;
+    background-color: mix(rgb(255,255,255), #181a1e, 10%);
+  
+    a[rel="bookmark"]::before {
+      content: '';
+      display:block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  .entry-image {
+    -webkit-box-ordinal-group: 0;
+    -ms-flex-order: -1;
+    order: -1;
+    width: 100%;
+    //margin-bottom: 0.2rem;
+    overflow: hidden;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: none;
+    
+  }
+
+  .entry-container{
+    position: relative;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  .entries-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+  .entry-container img  {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+
+  .entry-fader {
+    transition: all 0.2s ease-in-out;
+    background-color:rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+
+  .entry-fader:hover
+  {
+    //opacity: 1;
+    padding: 2px 4px 2px 4px;
+    background-color:rgba(0, 0, 0, 0);
+  }
+  
+  .entry-meta {
+    .entry-date,
+    .read-time {
+      //font-family: $meta-font-family;
+      font-style: italic;
+      white-space: nowrap;
+      float:right;
+    }
+  
+    .read-time + .entry-date::before {
+      content: "\2022";
+      padding: 0px 5px;
+    }    
+    position: absolute;
+    right: 5px;
+    top: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 0px 0px 0px 5px;
+    font-size: 75%;
+    opacity: 1;
+    background-color: mix(rgb(255,255,255), #181a1e, 10%);
+    pointer-events: none;
+  }
+  
+  .entry-excerpt {
+    //padding: 5px;
+    blockquote {
+      border-radius: 0px 0px 5px 5px;
+    }
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+
+
+  
+  .entry-excerpt a,
+  .u-bookmark-of {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /*
+     Entries List Layout
+     ========================================================================== */
+  
+  .entries-list {
+    .entry {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  
+    .entry-title {
+      @include fluid-type($min-vw, $max-vw, 24px, 36px);
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+    }
+  
+    .entry-excerpt,
+    .entry-content {
+      -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+      order: 3;
+  
+      /* remove space after last child element */
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  
+    .entry-excerpt {
+      /* normalize font sizes */
+      > * {
+        font-size: 1rem;
+      }
+    }
+  
+    .entry-meta {
+      //margin-bottom: 1em;
+      font-size: 0.75rem;
+      background-color: mix(rgb(255,255,255), #252a34, 10%);
+    }
+  
+    .more-link {
+      margin-top: -1em;
+  
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  
+  
+  // Masonry
+  .entries-grid-colcade {
+    //display: grid;
+    display: flex;
+    transition: 1000ms;
+    
+    opacity: 0;
+  
+    .entry {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-bottom: 1em;
+      margin-right: 1em;
+      padding:5px;
+    }
+  
+    .entry-col
+    {
+      width: 100%;
+      float: left;
+    }
+  
+    .entry-col--1{
+      display:none;
+    }
+
+    .entry-col--a{
+      display:none;
+    }
+  
+    .entry-col--2>.entry
+    {
+      //margin-right: 0em;
+      display:block;
+    }
+
+    .clearfix::after 
+    {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    @include breakpoint($medium)
+    {
+      .entry-col{
+        width: 50%;
+      }
+  
+      .entry-col--1{
+        display:block;
+      }
+    }
+  
+  
+    .entry-title {
+      @include fluid-type($min-vw, $max-vw, 18px, 24px);
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+    }
+  
+    .entry-excerpt,
+    .entry-content {
+      -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+      order: 3;
+  
+      /* remove space after last child element */
+      > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .entry-yt {
+      display: inline-block;
+      width: auto;
+    }
+  
+    .entry-excerpt {
+      /* normalize font sizes */
+      > * {
+        font-size: 1rem;
+      }
+    }
+
+
+  
+   
+  
+    .more-link {
+      margin-top: -1em;
+  
+      a {
+        text-decoration: none;
+      }
+    }
+  }
