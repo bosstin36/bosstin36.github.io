@@ -10,7 +10,7 @@ entries_layout: list
 
 >- 15 years experience developing games and leading teams
 >- Highly adaptable Technical Art and Technical Design skillset
->- See my full experience: [{{ site.data.icons.resume }} CV](/CV)
+>- See my full experience: [{{ site.data.icons.resume }} CV](/cv)
 
 
 <!--
