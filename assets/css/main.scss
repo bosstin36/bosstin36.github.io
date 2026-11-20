@@ -6,3 +6,14 @@ sitemap: false
 @charset "utf-8";
 
 @import "so-simple";
+
+// Size inline SVG icons immediately, before the Font Awesome script loads
+// (prevents icons like the Back arrow rendering huge on page load).
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2x { font-size: 2em; }
